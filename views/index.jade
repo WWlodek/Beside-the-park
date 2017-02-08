@@ -1,0 +1,144 @@
+doctype html
+html(lang='en')
+  head
+    title Beside the Baths Park
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(href='css/master.css', rel='stylesheet', type='text/css')
+    script(src='js/handlebars-v4.0.5.js')
+    script(src='js/responsive-img.min.js')
+    script(src='js/main.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:600', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:700', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:300', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans:400', rel='stylesheet')
+  body
+    #loader_img.o-loader-img.js-sliding_in
+      img(src='css/img/welcome.jpg', alt='Welcome Picture')
+    #loaded_content.o-main-coponent.js-appear
+      ul.c-navbar
+        li#park_header.c-navbar_center
+        li.c-navbar_right
+          button.c-navbar_right_button
+            img.c-navbar_right_button--glass(data-src-base='css/img/', data-src='<751:glass.png, >751:glass.png')
+          span._add-spacing
+            button.c-navbar_right_button2
+              img.c-navbar_right_button2--menubar(data-src-base='css/img/', data-src='<751:strips.png, >751:strips.png')
+        li#search.c-navbar_right.js-invisible.slide_left
+          input#input1(type='text', name='search', placeholder='Search...', disabled='')
+        li#menu.c-navbar_center.inactive-display.centered Menu...
+      .c-mainpark
+        .c-mainpark_jumbo.js-items-to-slide
+          table.c-mainpark_jumbo_table
+            tr
+              td#jumbo_header
+              td._inactive-display-mobile
+            tr
+              td#jumbo_info.c-mainpark_jumbo_table--paragraph
+              td
+      .o-phone.js-items-to-slide
+        img.o-phone--sizeing(data-src-base='css/img/', data-src='<751:phonesmall.png, >751:phone.png')
+      .c-secondpark
+        table.c-secondpark_table
+          tr
+            td#table_white_header.c-secondpark_table--header
+            td
+          tr
+            td#row_one
+            td._inactive-display-mobile
+          tr
+            td#row_two
+            td#row_three(rowspan='2')
+          tr
+            td#row_four
+      .c-thirdpark
+        table.c-thirdpark_table
+          tr.js-items-to-slide
+            td.c-thirdpark_table--color1
+              span#color_header_one.c-thirdpark_table--header
+              p#color_par_one.c-thirdpark_table--paragraph
+              span#color_link_one.c-thirdpark_table--link
+            td.c-thirdpark_table--color2
+              span#color_header_two.c-thirdpark_table--header
+              p#color_par_two.c-thirdpark_table--paragraph
+              span#color_link_two.c-thirdpark_table--link
+          tr.js-items-to-slide
+            td.c-thirdpark_table--color3
+              span#color_header_three.c-thirdpark_table--header
+              p#color_par_three.c-thirdpark_table--paragraph
+              span#color_link_three.c-thirdpark_table--link
+            td.c-thirdpark_table--color4
+              span#color_header_four.c-thirdpark_table--header
+              p#color_par_four.c-thirdpark_table--paragraph
+              span#color_link_four.c-thirdpark_table--link
+    script#park-header(type='text/x-handlebars-template').
+      <b>{{navheader}}</b>
+    script#jumbo-header(type='text/x-handlebars-template').
+      <h1>{{jumboheader}}</h1>
+    script#jumbo-info(type='text/x-handlebars-template').
+      <p>{{jumboinfo}}</p>
+    script#table-white-header(type='text/x-handlebars-template').
+      {{tablewhiteheader}}
+    script#row-one(type='text/x-handlebars-template').
+      {{rowone}}
+    script#row-two(type='text/x-handlebars-template').
+      {{rowtwo}}
+    script#row-three(type='text/x-handlebars-template').
+      {{rowthreeA}}<br><br>{{rowthreeB}}
+    script#row-four(type='text/x-handlebars-template').
+      {{rowfour}}
+    script#color-header-one(type='text/x-handlebars-template').
+      {{colorheaderone}}
+    script#color-header-two(type='text/x-handlebars-template').
+      {{colorheadertwo}}
+    script#color-header-three(type='text/x-handlebars-template').
+      {{colorheaderthree}}
+    script#color-header-four(type='text/x-handlebars-template').
+      {{colorheaderfour}}
+    script#color-par-one(type='text/x-handlebars-template').
+      {{colorparone}}
+    script#color-par-two(type='text/x-handlebars-template').
+      {{colorpartwo}}
+    script#color-par-three(type='text/x-handlebars-template').
+      {{colorparthree}}
+    script#color-par-four(type='text/x-handlebars-template').
+      {{colorparfour}}
+    script#color-link-one(type='text/x-handlebars-template').
+      <br><br>{{colorlinkone}}
+    script#color-link-two(type='text/x-handlebars-template').
+      <br><br>{{colorlinktwo}}
+    script#color-link-three(type='text/x-handlebars-template').
+      <br><br>{{colorlinkthree}}
+    script#color-link-four(type='text/x-handlebars-template').
+      <br><br>{{colorlinkfour}}
+    script(type='text/javascript').
+      parkTemplate();
+    script(type='text/javascript').
+      $(window).scroll(function() {
+        $(".js-items-to-slide").each(function(){
+          var pos = $(this).offset().top;
+          var winTop = $(window).scrollTop();
+            if (pos < winTop + 1000) {
+             $(this).addClass("js-slideing");
+            }
+        });
+      });
+      $('.c-navbar_right_button--glass').on('click', function() {
+        $('#search').toggleClass('js-slide_right')
+        $('#search').toggleClass('js-visible')
+      });
+      $('.c-navbar_right_button2').click(function() {
+        $('#menu').slideToggle(150);
+      });
+      var time;
+      time = setTimeout(showPage, 3500);
+      function showPage() {
+        document.getElementById("loader_img").style.display = "none";
+        document.getElementById("loaded_content").style.display = "block";
+      }
+      var time;
+      time = setTimeout(secondAnim, 2000);
+      function secondAnim() {
+        document.getElementById("loader_img").className = "o-loader-img js-sliding_out";
+      }

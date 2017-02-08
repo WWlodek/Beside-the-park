@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Beside the Baths Park</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/master.css" rel="stylesheet" type="text/css">
+    <script src="js/handlebars-v4.0.5.js"></script>
+    <script src="js/responsive-img.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet">
+  </head>
+  <body>
+    <div id="loader_img" class="o-loader-img js-sliding_in"><img src="css/img/welcome.jpg" alt="Welcome Picture"></div>
+    <div id="loaded_content" class="o-main-coponent js-appear">
+      <ul class="c-navbar">
+        <li id="park_header" class="c-navbar_center"></li>
+        <li class="c-navbar_right">
+          <button class="c-navbar_right_button"><img data-src-base="css/img/" data-src="&lt;751:glass.png, &gt;751:glass.png" class="c-navbar_right_button--glass"></button><span class="_add-spacing">
+            <button class="c-navbar_right_button2"><img data-src-base="css/img/" data-src="&lt;751:strips.png, &gt;751:strips.png" class="c-navbar_right_button2--menubar"></button></span>
+        </li>
+        <li id="search" class="c-navbar_right js-invisible slide_left">
+          <input id="input1" type="text" name="search" placeholder="Search..." disabled="">
+        </li>
+        <li id="menu" class="c-navbar_center inactive-display centered">Menu...</li>
+      </ul>
+      <div class="c-mainpark">
+        <div class="c-mainpark_jumbo js-items-to-slide">
+          <table class="c-mainpark_jumbo_table">
+            <tr>
+              <td id="jumbo_header"></td>
+              <td class="_inactive-display-mobile"></td>
+            </tr>
+            <tr>
+              <td id="jumbo_info" class="c-mainpark_jumbo_table--paragraph"></td>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="o-phone js-items-to-slide"><img data-src-base="css/img/" data-src="&lt;751:phonesmall.png, &gt;751:phone.png" class="o-phone--sizeing"></div>
+      <div class="c-secondpark">
+        <table class="c-secondpark_table">
+          <tr>
+            <td id="table_white_header" class="c-secondpark_table--header"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td id="row_one"></td>
+            <td class="_inactive-display-mobile"></td>
+          </tr>
+          <tr>
+            <td id="row_two"></td>
+            <td id="row_three" rowspan="2"></td>
+          </tr>
+          <tr>
+            <td id="row_four"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="c-thirdpark">
+        <table class="c-thirdpark_table">
+          <tr class="js-items-to-slide">
+            <td class="c-thirdpark_table--color1"><span id="color_header_one" class="c-thirdpark_table--header"></span>
+              <p id="color_par_one" class="c-thirdpark_table--paragraph"></p><span id="color_link_one" class="c-thirdpark_table--link"></span>
+            </td>
+            <td class="c-thirdpark_table--color2"><span id="color_header_two" class="c-thirdpark_table--header"></span>
+              <p id="color_par_two" class="c-thirdpark_table--paragraph"></p><span id="color_link_two" class="c-thirdpark_table--link"></span>
+            </td>
+          </tr>
+          <tr class="js-items-to-slide">
+            <td class="c-thirdpark_table--color3"><span id="color_header_three" class="c-thirdpark_table--header"></span>
+              <p id="color_par_three" class="c-thirdpark_table--paragraph"></p><span id="color_link_three" class="c-thirdpark_table--link"></span>
+            </td>
+            <td class="c-thirdpark_table--color4"><span id="color_header_four" class="c-thirdpark_table--header"></span>
+              <p id="color_par_four" class="c-thirdpark_table--paragraph"></p><span id="color_link_four" class="c-thirdpark_table--link"></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script id="park-header" type="text/x-handlebars-template"><b>{{navheader}}</b></script>
+    <script id="jumbo-header" type="text/x-handlebars-template"><h1>{{jumboheader}}</h1></script>
+    <script id="jumbo-info" type="text/x-handlebars-template"><p>{{jumboinfo}}</p></script>
+    <script id="table-white-header" type="text/x-handlebars-template">{{tablewhiteheader}}</script>
+    <script id="row-one" type="text/x-handlebars-template">{{rowone}}</script>
+    <script id="row-two" type="text/x-handlebars-template">{{rowtwo}}</script>
+    <script id="row-three" type="text/x-handlebars-template">{{rowthreeA}}<br><br>{{rowthreeB}}</script>
+    <script id="row-four" type="text/x-handlebars-template">{{rowfour}}</script>
+    <script id="color-header-one" type="text/x-handlebars-template">{{colorheaderone}}</script>
+    <script id="color-header-two" type="text/x-handlebars-template">{{colorheadertwo}}</script>
+    <script id="color-header-three" type="text/x-handlebars-template">{{colorheaderthree}}</script>
+    <script id="color-header-four" type="text/x-handlebars-template">{{colorheaderfour}}</script>
+    <script id="color-par-one" type="text/x-handlebars-template">{{colorparone}}</script>
+    <script id="color-par-two" type="text/x-handlebars-template">{{colorpartwo}}</script>
+    <script id="color-par-three" type="text/x-handlebars-template">{{colorparthree}}</script>
+    <script id="color-par-four" type="text/x-handlebars-template">{{colorparfour}}</script>
+    <script id="color-link-one" type="text/x-handlebars-template"><br><br>{{colorlinkone}}</script>
+    <script id="color-link-two" type="text/x-handlebars-template"><br><br>{{colorlinktwo}}</script>
+    <script id="color-link-three" type="text/x-handlebars-template"><br><br>{{colorlinkthree}}</script>
+    <script id="color-link-four" type="text/x-handlebars-template"><br><br>{{colorlinkfour}}</script>
+    <script type="text/javascript">parkTemplate();</script>
+    <script type="text/javascript">
+      $(window).scroll(function() {
+        $(".js-items-to-slide").each(function(){
+          var pos = $(this).offset().top;
+          var winTop = $(window).scrollTop();
+            if (pos < winTop + 1000) {
+             $(this).addClass("js-slideing");
+            }
+        });
+      });
+      $('.c-navbar_right_button--glass').on('click', function() {
+        $('#search').toggleClass('js-slide_right')
+        $('#search').toggleClass('js-visible')
+      });
+      $('.c-navbar_right_button2').click(function() {
+        $('#menu').slideToggle(150);
+      });
+      var time;
+      time = setTimeout(showPage, 3500);
+      function showPage() {
+        document.getElementById("loader_img").style.display = "none";
+        document.getElementById("loaded_content").style.display = "block";
+      }
+      var time;
+      time = setTimeout(secondAnim, 2000);
+      function secondAnim() {
+        document.getElementById("loader_img").className = "o-loader-img js-sliding_out";
+      }
+    </script>
+  </body>
+</html>
